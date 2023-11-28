@@ -1,0 +1,52 @@
+- name: install packages
+  community.general.pacman:
+    update_cache: yes
+    state: present
+    name:
+     - base-devel
+     - bat
+     - fd
+     - fzf
+     - git
+     - htop
+     - iotop
+     - lm_sensors
+     - man-db
+     - p7zip
+     - pacman-contrib
+     - plocate
+     - ripgrep
+     - smartmontools
+     - sudo
+     - zsh
+
+- name: ensure plocate-updatedb.timer is started and enabled at boot
+  ansible.builtin.systemd:
+    name: plocate-updatedb.timer
+    state: started
+    enabled: yes
+
+#  create symlinkls
+# - name: symlink vi
+#   ansible.builtin.file:
+#     src: usr/bin/vim
+#     dest: /usr/bin/vi
+#     state: link
+
+# create scripts directory
+- name: scripts directory
+  ansible.builtin.file:
+    path: /root/scripts
+    state: directory
+    owner: root
+    group: root
+    mode: '755'
+
+# update pacman script
+- name: update pacman mirrors script
+  ansible.builtin.copy:
+    src: files/pacman-new-mirrorlist.sh
+    dest: /root/scripts/pacman-new-mirrorlist.sh
+    owner: root
+    group: root
+    mode: '700'
