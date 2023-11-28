@@ -1,4 +1,4 @@
-This is a real-world DevOps project with no Kubernetes. The idea is to build an infrastructure with cheap and opensource tools.
+This is a real-world DevOps project with no Kubernetes. The idea is to build a Linux based infrastructure with cheap and open source tools.
 
 Tools involved:
 
