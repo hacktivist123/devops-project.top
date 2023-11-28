@@ -20,4 +20,4 @@ Tools involved:
 - checkmk
 - Borg & Borgmatic
 - Gitlab
-- Python
+- Go
