@@ -4,3 +4,4 @@
     - essentials
     - security
     - sysctl
+    - certbot

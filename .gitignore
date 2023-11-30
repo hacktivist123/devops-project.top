@@ -77,3 +77,4 @@ profile
 
 notes.txt
 .vscode
+ansible/certbot/certbot/credentials.ini
