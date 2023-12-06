@@ -74,7 +74,9 @@ venv/
 .DS_Store
 profile
 
-
+#project specific files
 notes.txt
 .vscode
 ansible/certbot/certbot/credentials.ini
+ansible/wireguard/files/*
+ansible/.vault_password

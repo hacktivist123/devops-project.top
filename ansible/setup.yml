@@ -6,4 +6,5 @@
     # - sysctl
     # - certbot
     # - wireguard
-    - docker
+    # - docker
+    - mariadb
