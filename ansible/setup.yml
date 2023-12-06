@@ -7,4 +7,5 @@
     # - certbot
     # - wireguard
     # - docker
-    - mariadb
+    # - mariadb
+    - lxc

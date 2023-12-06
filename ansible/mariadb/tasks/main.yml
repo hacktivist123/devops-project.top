@@ -29,7 +29,7 @@
     password: "{{ mariadb_root_password }}"
     host_all: yes
     state: present
-  no_log: false
+  no_log: true
   when: mariadb_initialized_true.stat.exists == false
 
 - name: removes anonymous user account
