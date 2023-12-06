@@ -1,0 +1,2 @@
+- name: restart wg-devops-project
+  systemd: "name=wg-quick@wg0.service state=restarted"

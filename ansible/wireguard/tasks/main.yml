@@ -1,0 +1,18 @@
+- name: install packages
+  community.general.pacman:
+    name: wireguard-tools
+
+- name: wg-devops-project
+  ansible.builtin.copy:
+    src: files/wg0.conf
+    dest: /etc/wireguard/wg0.conf
+    owner: root
+    group: root
+    mode: '600'
+  notify: restart wg-devops-project
+
+- name: ensure wg-quick@wg-devops-project.service is started and enabled at boot
+  ansible.builtin.systemd:
+    name: wg-quick@wg0.service
+    state: started
+    enabled: yes
