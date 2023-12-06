@@ -12,4 +12,6 @@
     group: root
     mode: '644'
     backup: yes
-  notify: restart iptables
+  notify:
+  - restart iptables
+  - restart docker
