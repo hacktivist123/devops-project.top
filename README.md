@@ -6,8 +6,6 @@ Tools involved:
 - Arch Linux as the OS of the server
 - Ansible
 - Certbot
-- ACME Protocol
-- Wildcard
 - WireGuard
 - Docker
 - MariaDB
