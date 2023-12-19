@@ -11,6 +11,15 @@ certbot certonly \
     --dns-linode-propagation-seconds 1000 \
     --domain '*.devops-project.top'
 
+
+certbot certonly \
+    --quiet \
+    --agree-tos \
+    --email akintayoshedrack@gmail.com \
+    --dns-linode \
+    --dns-linode-credentials /root/certbot/credentials.ini \
+    --dns-linode-propagation-seconds 1000 \
+    --domain 'mail.devops-project.top'
 # if you need multiple domains in iRedMail
 # uncomment the section below and adjust '--domain' .
 # You need separate TLS certificates for multiple domains in iRedMail
@@ -23,7 +32,7 @@ certbot certonly \
 # certbot certonly \
 #     --quiet \
 #     --agree-tos \
-#     --email <EMAIL> \
+#     --email mail.devops-project.top \
 #     --authenticator dns-linode \
 #     --dns-linode-credentials /root/certbot/credentials.ini \
 #     --dns-linode-propagation-seconds 1000 \

@@ -50,3 +50,24 @@
   ansible.builtin.systemd:
     name: lxc@mail.devops-project.top
     enabled: yes
+
+- name: backup script for lxc zulip.devops-project.top
+  ansible.builtin.copy:
+    src: files/lxc-backup-zulip-devops-project-top.sh
+    dest: /root/scripts
+    owner: root
+    group: root
+    mode: '700'
+
+- name: add backup script for lxc zulip.devops-project.top to crontab
+  ansible.builtin.cron:
+    name: lxc zulip.devops-project.top backup
+    minute: "11"
+    hour: "1"
+    user: root
+    job: "/root/scripts/lxc-backup-zulip-devops-project-top.sh > /dev/null 2>&1"
+
+- name: ensure lxc zulip.devops-project.top is enabled at boot
+  ansible.builtin.systemd:
+    name: lxc@zulip.devops-project.top
+    enabled: yes

@@ -3,6 +3,21 @@
 :INPUT ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
+# Any network packet that comes in
+# and has VPS' public IP as its destination
+# and is trying to connect to Dovecot (143) or Postfix (25, 587)
+# route it to the iRedMail LXC.
+# I'm using only IMAP STARTTLS (143) and SMTP STARTTLS (587),
+# but you can add POP3 and/or SSL variant if you want.
+# Check https://docs.iredmail.org/network.ports.html for details, but
+# ignore 80/443 - only HTTP(S) entrypoint will be on the VPS (Traefik)
+-A PREROUTING -p tcp -m tcp -d 172.105.86.16 --dport 25 -j DNAT --to-destination 10.100.100.11:25
+-A PREROUTING -p tcp -m tcp -d 172.105.86.16 --dport 143 -j DNAT --to-destination 10.100.100.11:143
+-A PREROUTING -p tcp -m tcp -d 172.105.86.16 --dport 587 -j DNAT --to-destination 10.100.100.11:587
+# When network packets are coming from the internal network,
+# send it directly to the LXC.
+-A OUTPUT -d 172.105.86.16 -p tcp -m tcp --dport 143 -j DNAT --to-destination 10.100.100.11:143
+-A OUTPUT -d 172.105.86.16 -p tcp -m tcp --dport 587 -j DNAT --to-destination 10.100.100.11:587
 -A POSTROUTING -s 10.100.94.0/24 -o eth0 -j MASQUERADE
 COMMIT
 
