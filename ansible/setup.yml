@@ -8,4 +8,5 @@
     # - wireguard
     # - docker
     # - mariadb
-    - lxc
+    # - lxc
+    - traefik
