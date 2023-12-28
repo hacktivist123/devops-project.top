@@ -10,4 +10,5 @@
     # - mariadb
     # - lxc
     # - traefik
-    - pi-hole
+    # - pi-hole
+    - nextcloud
