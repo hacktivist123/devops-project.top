@@ -9,8 +9,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./sites:/omd/sites
-    environment:
-      MAIL_RELAY_HOST: mailer
+    # environment:
+    #   MAIL_RELAY_HOST: mailer
     networks:
       - web
     logging:
@@ -25,28 +25,28 @@ services:
       - 'traefik.http.routers.${service}.tls.certresolver=letsencrypt'
       - 'traefik.http.routers.${service}.entrypoints=https'
       - 'traefik.http.services.${service}.loadbalancer.server.port=5000'
-      - 'traefik.http.routers.${service}.middlewares=${service}-whitelist'
-      - 'traefik.http.middlewares.${service}-whitelist.ipwhitelist.sourcerange=${ip_whitelist}'
+      # - 'traefik.http.routers.${service}.middlewares=${service}-whitelist'
+      # - 'traefik.http.middlewares.${service}-whitelist.ipwhitelist.sourcerange=${ip_whitelist}'
 
-  mailer:
-    image: namshi/smtp
-    container_name: mailer
-    hostname: ${mailer_hostname}
-    restart: always
-    environment:
-      DISABLE_IPV6: true
-      SMARTHOST_ADDRESS: ${smarthost_address}
-      SMARTHOST_PORT: ${smarthost_port}
-      SMARTHOST_USER: ${smarthost_user}
-      SMARTHOST_PASSWORD: ${smarthost_password}
-      SMARTHOST_ALIASES: ${smarthost_aliases}
-    networks:
-      - web
-    logging:
-      driver: 'json-file'
-      options:
-        max-size: '10m'
-        max-file: '5'
+  # mailer:
+  #   image: namshi/smtp
+  #   container_name: mailer
+  #   hostname: ${mailer_hostname}
+  #   restart: always
+  #   environment:
+  #     DISABLE_IPV6: true
+  #     SMARTHOST_ADDRESS: ${smarthost_address}
+  #     SMARTHOST_PORT: ${smarthost_port}
+  #     SMARTHOST_USER: ${smarthost_user}
+  #     SMARTHOST_PASSWORD: ${smarthost_password}
+  #     SMARTHOST_ALIASES: ${smarthost_aliases}
+  #   networks:
+  #     - web
+  #   logging:
+  #     driver: 'json-file'
+  #     options:
+  #       max-size: '10m'
+  #       max-file: '5'
 
 networks:
   web:
