@@ -11,4 +11,5 @@
     # - lxc
     # - traefik
     # - pi-hole
-    - nextcloud
+    # - nextcloud
+    - checkmk
