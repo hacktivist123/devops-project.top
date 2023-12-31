@@ -13,4 +13,5 @@
     # - pi-hole
     # - nextcloud
     # - checkmk
-    - borg
+    # - borg
+    - gitlab
