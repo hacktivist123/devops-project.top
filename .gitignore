@@ -80,3 +80,11 @@ notes.txt
 ansible/certbot/certbot/credentials.ini
 ansible/wireguard/files/*
 ansible/.vault_password
+ansible/lxc/files/.env-lxc-backups
+traefik/traefik/.env
+pi-hole/pihole/.env
+nextcloud/nextcloud/.env
+checkmk/checkmk/.env
+checkmk/checkmk/agent/.env
+borg/files/.env
+gitlab/gitlab/.env
