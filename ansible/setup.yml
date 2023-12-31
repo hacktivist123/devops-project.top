@@ -12,4 +12,5 @@
     # - traefik
     # - pi-hole
     # - nextcloud
-    - checkmk
+    # - checkmk
+    - borg
