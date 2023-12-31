@@ -3,7 +3,9 @@
 ![Screen Recording 2023-12-31 at 11 00 47 AM](https://github.com/hacktivist123/devops-project.top/assets/26572907/316bb10f-0235-4ac1-84a1-aa63948be4fe)
 
 
-This website runs inside its own Docker container, behind a Traefik reverse proxy with a Docker provider, with an automatic TLS certificate from Let's Encrypt, deployed via GitLab CI/CD, to a server managed with Ansible. The idea is to build a Linux-based infrastructure with cheap and open source tools.
+This website runs inside its own Docker container, behind a Traefik reverse proxy with a Docker provider, with an automatic TLS certificate from Let's Encrypt, deployed via GitLab CI/CD, to a server managed with Ansible. 
+
+The idea is to build a Linux-based infrastructure with cheap and open source tools.
 
 Tools involved:
 - [Linode](linode.com) VPS with 4 CPU Cores, 8GB of RAM, 160GB of storage and an additional 40GB volume for storage
