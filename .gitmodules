@@ -1,0 +1,3 @@
+[submodule "devops-project.top"]
+	path = devops-project.top
+	url = https://gitlab.devops-project.top/hacktivist123/devops-project
