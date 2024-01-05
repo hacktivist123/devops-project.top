@@ -60,7 +60,4 @@ Tools involved:
 
   <img width="1440" alt="Screenshot 2023-12-31 at 8 51 04 AM" src="https://github.com/hacktivist123/devops-project.top/assets/26572907/63c7c740-834a-462b-9205-b5275044f4fe">
 
-
-- Python
-
 _PS: Check the top level `.gitignore` file for the missing files that can't be added to this repo due to security reasons_
